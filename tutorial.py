@@ -21,7 +21,7 @@ def get_png_files(folder_path):
     return glob.glob(f"{folder_path}/*.png")
 
 # get the list of image files in the folder yopu want to process
-image_files = get_png_files("./images")
+image_files = get_png_files("./images/cars/")
 # image_files.sort()
 image_files.sort(key=lambda k: k[-7:-4])
 image_files = image_files[:3]
@@ -41,7 +41,7 @@ def process_image(image_file):
     full_response = ''
     # Generate a description of the image
     for response in generate(model='llava',
-                             prompt='describe this image and make sure to include anything notable about it (include text you see in the image):',
+                             prompt='describe this image and make sure to include anything notable about it (include text if you see in the image):',
                              images=[image_bytes],
                              stream=True):
         # Print the response to the console and add it to the full response
