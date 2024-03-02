@@ -24,7 +24,7 @@ def get_png_files(folder_path):
 image_files = get_png_files("./images/cars/")
 # image_files.sort()
 image_files.sort(key=lambda k: k[-7:-4])
-image_files = image_files[:3]
+# image_files = image_files[:3]
 
 print(image_files)
 print(df.head())
